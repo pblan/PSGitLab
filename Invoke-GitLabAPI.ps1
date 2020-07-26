@@ -1,10 +1,18 @@
 Function Invoke-GitLabAPI {
+    <#
+    .Synopsis
+       Invokes a given GitLab-API request according to a certain GitLab config.
+    .DESCRIPTION
+       Invokes a given GitLab-API request according to a certain GitLab config.
+    .EXAMPLE
+        Invoke-GitLabAPI -Request $Request -Format 'GitLab.Project.Event'
+    #>
     [CmdletBinding()]
     param (
         [Parameter(Mandatory = $true)]
         [ValidateNotNullOrEmpty()]
         $Request,
-        [Parameter()] 
+        [Parameter(Mandatory = $true)] 
         [ValidateNotNullOrEmpty()]
         [string]
         $ObjectType,
