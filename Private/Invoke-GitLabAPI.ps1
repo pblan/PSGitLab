@@ -64,4 +64,3 @@ Function Invoke-GitLabAPI {
         Write-Output $Result
     }
 }
-#Export-ModuleMember -Function Invoke-GitLabAPI

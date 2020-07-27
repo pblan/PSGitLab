@@ -21,5 +21,3 @@ Function Get-GitLabProjectAccessRequests {
 
     Invoke-GitLabAPI -Request $Request -ObjectType 'GitLab.Request.Access'
 }
-
-Write-Host (Get-GitLabProjectAccessRequests -ProjectId 3154)

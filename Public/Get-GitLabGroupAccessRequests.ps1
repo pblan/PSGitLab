@@ -21,5 +21,3 @@ Function Get-GitLabGroupAccessRequests {
 
     Invoke-GitLabAPI -Request $Request -ObjectType 'GitLab.Request.Access'
 }
-
-Write-Host (Get-GitLabGroupAccessRequests -GroupId 83)
