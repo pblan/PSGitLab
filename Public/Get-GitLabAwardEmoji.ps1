@@ -5,7 +5,7 @@ Function Get-GitLabAwardEmoji {
     .DESCRIPTION
     Gets all received award emojis. Requires project ID and award emoji source.
     .EXAMPLE
-    Get-GitLabAwardEmoji -ProjectId 2 -Issues -Snippets
+    Get-GitLabAwardEmoji -SnippetId 48 -ProjectId 3154
     #>  
     [CmdletBinding()]
     param (
