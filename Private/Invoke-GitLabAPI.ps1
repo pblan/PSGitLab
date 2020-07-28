@@ -12,10 +12,12 @@ Function Invoke-GitLabAPI {
         [Parameter(Mandatory = $true)]
         [ValidateNotNullOrEmpty()]
         $Request,
+        <#
         [Parameter(Mandatory = $true)] 
         [ValidateNotNullOrEmpty()]
         [string]
         $ObjectType,
+        #>
         [Parameter()]
         [ValidateNotNullOrEmpty()]
         $ConfigPath = "$env:appdata\PSGitLab\PSGitLabConfig.xml"
@@ -23,7 +25,6 @@ Function Invoke-GitLabAPI {
 
     $GitLabConfig = Import-GitLabAPIConfig $ConfigPath
     $domain = $GitLabConfig.Domain
-    #$token = ConvertFrom-SecureString $GitLabConfig.Token
     $bstr = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($GitLabConfig.Token)
     $token = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($bstr)
 
@@ -36,19 +37,11 @@ Function Invoke-GitLabAPI {
     $Request.URI = "$Domain/api/v4" + $Request.URI
     $Request.UseBasicParsing = $true
 
-    Write-Host $Request.URI
     try  {
         Write-Verbose "URL: $($Request.URI)"
-        $webContent = Invoke-WebRequest @Request
-        $totalPages = ($webContent).Headers['X-Total-Pages']
-        $results = $webContent.Content | ConvertFrom-Json
-
-        while ($totalPages -gt 0) {
-            $newRequest = $Request
-            $newRequest.URI = $newRequest.URI + "&page=$($i+1)"
-            $Results += (Invoke-WebRequest @newRequest).Content | ConvertFrom-Json
-            $totalPages--
-        }
+        $webContent = Invoke-RestMethod @Request
+        Write-Verbose "Web Content: $($webContent)"
+        $Result = $webContent
 
         Remove-Variable Token
         Remove-Variable Headers
@@ -59,9 +52,6 @@ Function Invoke-GitLabAPI {
         Write-Warning  -Message "$ErrorMessage. See $Domain/help/api/README.md#status-codes for more information."
     }
     
-    foreach ($Result in $Results) {
-        $Result.pstypenames.insert(0,$ObjectType)
-        Write-Output $Result
-    }
+    #$Result.pstypenames.insert(0,$ObjectType)
+    Write-Output $Result
 }
-#Export-ModuleMember -Function Invoke-GitLabAPI
