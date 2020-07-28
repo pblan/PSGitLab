@@ -13,5 +13,4 @@ foreach($import in @($Private + $Public)) {
     }
 }
 
-Write-Verbose ($Public.Basename | Out-String)
 Export-ModuleMember -Function @($Public.Basename + $Private.Basename)
