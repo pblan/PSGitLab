@@ -39,7 +39,7 @@ Function Invoke-GitLabAPI {
 
     try  {
         Write-Verbose "URL: $($Request.URI)"
-        $webContent = Invoke-RestMethod @Request
+        $webContent = Invoke-RestMethod -FollowRelLink @Request
         Write-Verbose "Web Content: $($webContent)"
         $Result = $webContent
 
