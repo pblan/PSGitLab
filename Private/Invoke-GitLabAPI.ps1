@@ -28,7 +28,6 @@ Function Invoke-GitLabAPI {
     $bstr = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($GitLabConfig.Token)
     $token = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($bstr)
 
-    Write-Host $token
     $headers = @{
         'PRIVATE-TOKEN' = $Token;
     }
