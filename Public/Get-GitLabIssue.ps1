@@ -234,6 +234,11 @@ Function Get-GitLabIssue {
         }
     }
 
+    # Remove Whitespace
+    
+    $query = $query -replace '\s', '%20'
+
+    Write-Host $query
     $Request = @{
         URI=$query
         Method='GET'
