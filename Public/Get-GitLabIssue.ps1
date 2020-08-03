@@ -210,7 +210,7 @@ Function Get-GitLabIssue {
             #'IssueIid' { $query = $query.TrimEnd('?') + "/$IssueIid" ; break}
             'IssueIid' { $issueIids = $param.Value -join "&iids[]=" ; $query = $query + "&iids[]=$($issueIids)" ; break}
             'State' { $query = $query + "&state=$($param.Value)" }
-            'Label' { $labels = $param.Value -join "," ; $query = $query + "&state=$($labels)" }
+            'Label' { $labels = $param.Value -join "," ; $query = $query + "&labels=$($labels)" }
             'Milestone' { $query = $query + "&milestone=$($param.Value)" }
             'Scope' { $query = $query + "&scope=$($param.Value)" }
             'AuthorId' { $query = $query + "&author_id=$($param.Value)" }
@@ -235,7 +235,7 @@ Function Get-GitLabIssue {
     }
 
     # Remove Whitespace
-    
+
     $query = $query -replace '\s', '%20'
 
     Write-Host $query
