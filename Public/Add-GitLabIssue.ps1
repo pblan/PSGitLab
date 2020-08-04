@@ -64,7 +64,7 @@ Function Add-GitLabIssue {
             'MilestoneId' { $query = $query + "&milestone_id=$($param.Value)" }
             'Labels' { $query = $query + "&labels=$($param.Value)" }
             'CreatedAt' { $date = $param.Value.ToString("yyyy-MM-dd\THH\:mm\:ss") ; $query = $query + "&created_at=$($date)" }
-            'DueDate' { $date = $param.Value.ToString("yyyy-MM-dd\THH\:mm\:ss") ; $query = $query + "&due_date=$($date)" }
+            'DueDate' { $date = $param.Value.ToString("yyyy-MM-dd") ; $query = $query + "&due_date=$($date)" }
             'MergeRequestToResolveDiscussionsOf' { $query = $query + "&merge_request_to_resolve_discussions_of=$($param.Value)" }
             'DiscussionToResolve' { $query = $query + "&discussion_to_resolve=$($param.Value)" }
             'Weight' { $query = $query + "&weight=$($param.Value)" }
