@@ -45,7 +45,7 @@ Function Remove-GitLabAwardEmoji {
             Method='DELETE'
         }
 
-        $response = Invoke-GitLabAPI -Request $Request #-ObjectType 'GitLab.Award'
+        $response = Invoke-GitLabAPI -Request $Request
     }
 
     if ($PSBoundParameters.ContainsKey('MergeRequestIid') -and !$PSBoundParameters.ContainsKey('NoteId')) {
@@ -54,7 +54,7 @@ Function Remove-GitLabAwardEmoji {
             Method='DELETE'
         }
 
-        $response = Invoke-GitLabAPI -Request $Request #-ObjectType 'GitLab.Award'
+        $response = Invoke-GitLabAPI -Request $Request
     }
 
     if ($PSBoundParameters.ContainsKey('SnippetId') -and !$PSBoundParameters.ContainsKey('NoteId')) {
@@ -63,7 +63,7 @@ Function Remove-GitLabAwardEmoji {
             Method='DELETE'
         }
 
-        $response = Invoke-GitLabAPI -Request $Request #-ObjectType 'GitLab.Award'
+        $response = Invoke-GitLabAPI -Request $Request
     }
 
     # Comment award section 
@@ -73,7 +73,7 @@ Function Remove-GitLabAwardEmoji {
             Method='DELETE'
         }
 
-        $response = Invoke-GitLabAPI -Request $Request #-ObjectType 'GitLab.Award'
+        $response = Invoke-GitLabAPI -Request $Request
     }
 
     if ($PSBoundParameters.ContainsKey('MergeRequestIid') -and $PSBoundParameters.ContainsKey('NoteId')) {
@@ -82,7 +82,7 @@ Function Remove-GitLabAwardEmoji {
             Method='DELETE'
         }
 
-        $response = Invoke-GitLabAPI -Request $Request #-ObjectType 'GitLab.Award'
+        $response = Invoke-GitLabAPI -Request $Request
     }
 
     if ($PSBoundParameters.ContainsKey('SnippetId') -and $PSBoundParameters.ContainsKey('NoteId')) {
@@ -91,7 +91,7 @@ Function Remove-GitLabAwardEmoji {
             Method='DELETE'
         }
 
-        $response = Invoke-GitLabAPI -Request $Request #-ObjectType 'GitLab.Award'
+        $response = Invoke-GitLabAPI -Request $Request
     }
     
     $response

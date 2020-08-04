@@ -47,7 +47,7 @@ Function Get-GitLabAwardEmoji {
             Method='GET'
         }
 
-        $response = Invoke-GitLabAPI -Request $Request #-ObjectType 'GitLab.Award'
+        $response = Invoke-GitLabAPI -Request $Request
         $awardEmojis = $awardEmojis, $response
     }
 
@@ -57,7 +57,7 @@ Function Get-GitLabAwardEmoji {
             Method='GET'
         }
 
-        $response = Invoke-GitLabAPI -Request $Request #-ObjectType 'GitLab.Award'
+        $response = Invoke-GitLabAPI -Request $Request
         $awardEmojis = $awardEmojis, $response
     }
 
@@ -67,7 +67,7 @@ Function Get-GitLabAwardEmoji {
             Method='GET'
         }
 
-        $response = Invoke-GitLabAPI -Request $Request #-ObjectType 'GitLab.Award'
+        $response = Invoke-GitLabAPI -Request $Request
         $awardEmojis = $awardEmojis, $response
     }
 
@@ -78,7 +78,7 @@ Function Get-GitLabAwardEmoji {
             Method='GET'
         }
 
-        $response = Invoke-GitLabAPI -Request $Request #-ObjectType 'GitLab.Award'
+        $response = Invoke-GitLabAPI -Request $Request
         $awardEmojis = $awardEmojis, $response
 
     }
@@ -89,7 +89,7 @@ Function Get-GitLabAwardEmoji {
             Method='GET'
         }
 
-        $response = Invoke-GitLabAPI -Request $Request #-ObjectType 'GitLab.Award'
+        $response = Invoke-GitLabAPI -Request $Request
         $awardEmojis = $awardEmojis, $response
         
     }
@@ -100,7 +100,7 @@ Function Get-GitLabAwardEmoji {
             Method='GET'
         }
 
-        $response = Invoke-GitLabAPI -Request $Request #-ObjectType 'GitLab.Award'
+        $response = Invoke-GitLabAPI -Request $Request
         $awardEmojis = $awardEmojis, $response
     }
 

@@ -30,7 +30,7 @@ Function Deny-GitLabAccess {
             Method='DELETE'
         }
 
-        $response = Invoke-GitLabAPI -Request $Request #-ObjectType 'GitLab.Award'
+        $response = Invoke-GitLabAPI -Request $Request
     }
 
     if ($PSBoundParameters.ContainsKey('Project')) {
@@ -39,7 +39,7 @@ Function Deny-GitLabAccess {
             Method='DELETE'
         }
 
-        $response = Invoke-GitLabAPI -Request $Request #-ObjectType 'GitLab.Award'
+        $response = Invoke-GitLabAPI -Request $Request
     }
 
     $response

@@ -30,7 +30,7 @@ Function Approve-GitLabAccess {
             Method='PUT'
         }
 
-        $response = Invoke-GitLabAPI -Request $Request #-ObjectType 'GitLab.Award'
+        $response = Invoke-GitLabAPI -Request $Request
     }
 
     if ($PSBoundParameters.ContainsKey('Project')) {
@@ -39,7 +39,7 @@ Function Approve-GitLabAccess {
             Method='PUT'
         }
 
-        $response = Invoke-GitLabAPI -Request $Request #-ObjectType 'GitLab.Award'
+        $response = Invoke-GitLabAPI -Request $Request
     }
 
     $response

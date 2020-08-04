@@ -243,6 +243,6 @@ Function Get-GitLabIssue {
         Method='GET'
     }
 
-    $response = Invoke-GitLabAPI -Request $Request #-ObjectType 'GitLab.Award'
+    $response = Invoke-GitLabAPI -Request $Request
     $response
 }

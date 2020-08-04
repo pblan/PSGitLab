@@ -12,12 +12,6 @@ Function Invoke-GitLabAPI {
         [Parameter(Mandatory = $true)]
         [ValidateNotNullOrEmpty()]
         $Request,
-        <#
-        [Parameter(Mandatory = $true)] 
-        [ValidateNotNullOrEmpty()]
-        [string]
-        $ObjectType,
-        #>
         [Parameter()]
         [ValidateNotNullOrEmpty()]
         $ConfigPath = "$env:appdata\PSGitLab\PSGitLabConfig.xml"
@@ -47,10 +41,9 @@ Function Invoke-GitLabAPI {
         Remove-Variable Request
     } 
     catch {
-        $ErrorMessage = $_#.exception.response#.statusDescription
+        $ErrorMessage = $_
         Write-Warning  -Message "$ErrorMessage. See $Domain/help/api/README.md#status-codes for more information."
     }
     
-    #$Result.pstypenames.insert(0,$ObjectType)
     Write-Output $Result
 }

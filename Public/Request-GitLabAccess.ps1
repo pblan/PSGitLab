@@ -27,7 +27,7 @@ Function Request-GitLabAccess {
             Method='POST'
         }
 
-        $response = Invoke-GitLabAPI -Request $Request #-ObjectType 'GitLab.Award'
+        $response = Invoke-GitLabAPI -Request $Request
     }
 
     if ($PSBoundParameters.ContainsKey('Project')) {
@@ -36,7 +36,7 @@ Function Request-GitLabAccess {
             Method='POST'
         }
 
-        $response = Invoke-GitLabAPI -Request $Request #-ObjectType 'GitLab.Award'
+        $response = Invoke-GitLabAPI -Request $Request
     }
 
     $response

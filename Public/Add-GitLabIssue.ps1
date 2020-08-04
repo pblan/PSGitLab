@@ -47,6 +47,7 @@ Function Add-GitLabIssue {
     )
 
     # Start of request
+
     $query = "/projects/$ProjectId/issues?"
 
 
@@ -83,7 +84,7 @@ Function Add-GitLabIssue {
         Method='POST'
     }
 
-    $response = Invoke-GitLabAPI -Request $Request #-ObjectType 'GitLab.Award'
+    $response = Invoke-GitLabAPI -Request $Request
     $response
 }
 
