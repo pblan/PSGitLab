@@ -6,11 +6,11 @@ $Content = Invoke-WebRequest $URL
 $Pattern = '<td style=text-align:left>\n*<a href=(?<Link>.*).html>(?<Name>.*)</a>'
 $AllMatches = ($Content | Select-String $Pattern -AllMatches).Matches
 
-$ResourceList = foreach ($Resource in $AllMatches)
+$ResourceList = foreach ($Match in $AllMatches)
 {
     [PSCustomObject]@{
-        'Name' = ($Resource.Groups.Where{$_.Name -like 'Name'}).Value
-        'Link' = "https://docs.gitlab.com/ee/api/" + ($Resource.Groups.Where{$_.Name -like 'Link'}).Value + ".html"
+        'Name' = ($Match.Groups.Where{$_.Name -like 'Name'}).Value
+        'Link' = "https://docs.gitlab.com/ee/api/" + ($Match.Groups.Where{$_.Name -like 'Link'}).Value + ".html"
         'Title' = ""
     }
 }
