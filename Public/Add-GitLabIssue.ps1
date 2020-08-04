@@ -26,7 +26,6 @@ Function Add-GitLabIssue {
         [Parameter()]
         $MilestoneId,
         [Parameter()]
-        [string[]]
         $Labels,
         [Parameter()]
         [datetime]
@@ -63,7 +62,7 @@ Function Add-GitLabIssue {
             'Confidential' { $bool = $param.Value.ToString().ToLower() ; $query = $query + "&confidential=$($bool)" }
             'AssigneeIds' { $assignees = $param.Value -join "," ; $query = $query + "&assignee_ids=$($assignees)" }
             'MilestoneId' { $query = $query + "&milestone_id=$($param.Value)" }
-            'Labels' { $labels = $param.Value -join "," ; $query = $query + "&labels=$($labels)" }
+            'Labels' { $query = $query + "&labels=$($param.Value)" }
             'CreatedAt' { $date = $param.Value.ToString("yyyy-MM-dd\THH\:mm\:ss") ; $query = $query + "&created_at=$($date)" }
             'DueDate' { $date = $param.Value.ToString("yyyy-MM-dd\THH\:mm\:ss") ; $query = $query + "&due_date=$($date)" }
             'MergeRequestToResolveDiscussionsOf' { $query = $query + "&merge_request_to_resolve_discussions_of=$($param.Value)" }
