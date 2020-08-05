@@ -5,7 +5,7 @@ Function Add-GitLabIssueTodo {
     .DESCRIPTION
     Manually creates a todo for the current user on an issue.
     .EXAMPLE
-    
+    Add-GitLabIssueTodo -ProjectId 3154 -IssueIid 8
     #>  
     [CmdletBinding()]
     param (
