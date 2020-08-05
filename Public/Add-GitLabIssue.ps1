@@ -5,7 +5,7 @@ Function Add-GitLabIssue {
     .DESCRIPTION
     Creates a new project issue.
     .EXAMPLE
-    Add-GitLabIssue -ProjectId 3154 -Title "Testing Add-GitLabIssue Cmdlet" -Description "Testing<br>Line<br>Breaks<br>."
+    Add-GitLabIssue -ProjectId 3154 -Title "Testing Add-GitLabIssue Cmdlet" -Description "Testing"
     #>  
     [CmdletBinding()]
     param (
