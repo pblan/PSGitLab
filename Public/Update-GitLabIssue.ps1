@@ -5,7 +5,7 @@ Function Update-GitLabIssue {
     .DESCRIPTION
     Updates an existing project issue.
     .EXAMPLE
-
+    
     #>  
     [CmdletBinding()]
     param (
@@ -53,8 +53,6 @@ Function Update-GitLabIssue {
     # Start of request
     
     $query = "/projects/$ProjectId/issues/$IssueIid\?"
-    Write-Host $query
-
 
     # Concatenating query
 
