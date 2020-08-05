@@ -51,7 +51,7 @@ Function Update-GitLabIssue {
     )
 
     # Start of request
-    $IssueIid = 7
+    
     $query = "/projects/$ProjectId/issues/$IssueIid\?"
     Write-Host $query
 
