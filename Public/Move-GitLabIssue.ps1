@@ -1,11 +1,11 @@
 Function Move-GitLabIssue {
     <#
     .SYNOPSIS
-    MOves an existing project issue to another project.
+    Moves an existing project issue to another project.
     .DESCRIPTION
-    MOves an existing project issue to another project.
+    Moves an existing project issue to another project.
     .EXAMPLE
-
+    Move-GitLabIssue -ProjectId 3154 -IssueIid 131 -ToProjectId 3198
     #>  
     [CmdletBinding()]
     param (
