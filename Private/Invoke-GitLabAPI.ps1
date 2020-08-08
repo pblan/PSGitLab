@@ -33,8 +33,13 @@ Function Invoke-GitLabAPI {
     try  {
         Write-Verbose "URL: $($Request.URI)"
         $webContent = Invoke-RestMethod -FollowRelLink @Request
+
+        for ($i = 0; $i -lt $webContent.Length; $i++) {
+            $webContentMerged += $webContent[$i]
+        }
+
         Write-Verbose "Web Content: $($webContent)"
-        $Result = $webContent
+        $Result = $webContentMerged
 
         Remove-Variable Token
         Remove-Variable Headers
